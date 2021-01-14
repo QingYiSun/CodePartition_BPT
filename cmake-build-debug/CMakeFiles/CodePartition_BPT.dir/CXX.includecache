@@ -1,0 +1,24 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/Users/abnerallen/CLionProjects/CodePartition_BPT/ReadDot.h
+string
+-
+vector
+-
+fstream
+-
+iostream
+-
+
+/Users/abnerallen/CLionProjects/CodePartition_BPT/main.cpp
+iostream
+-
+ReadDot.h
+/Users/abnerallen/CLionProjects/CodePartition_BPT/ReadDot.h
+
