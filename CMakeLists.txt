@@ -3,4 +3,4 @@ project(CodePartition_BPT)
 
 set(CMAKE_CXX_STANDARD 14)
 
-add_executable(CodePartition_BPT main.cpp ReadDot.cpp ReadDot.h)
+add_executable(CodePartition_BPT main.cpp ReadDot.cpp ReadDot.h Node.cpp Node.h)

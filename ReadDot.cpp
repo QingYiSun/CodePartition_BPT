@@ -6,6 +6,7 @@
 
 void ReadDot::readFromDot() {
 
+    // 将dot文件内容按行存入lines数组
     std::ifstream inFile;
     inFile.open(this->fileName, std::ios::binary);
     std::string tmp;

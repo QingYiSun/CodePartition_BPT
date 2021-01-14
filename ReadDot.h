@@ -21,6 +21,8 @@ public:
 
 private:
      std::string fileName;
+
+public:
      std::vector<std::string> lines;
 
 };

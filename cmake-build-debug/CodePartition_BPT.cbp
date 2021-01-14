@@ -80,6 +80,12 @@
 				</MakeCommands>
 			</Target>
 		</Build>
+		<Unit filename="/Users/abnerallen/CLionProjects/CodePartition_BPT/Node.cpp">
+			<Option target="CodePartition_BPT"/>
+		</Unit>
+		<Unit filename="/Users/abnerallen/CLionProjects/CodePartition_BPT/Node.h">
+			<Option target="CodePartition_BPT"/>
+		</Unit>
 		<Unit filename="/Users/abnerallen/CLionProjects/CodePartition_BPT/ReadDot.cpp">
 			<Option target="CodePartition_BPT"/>
 		</Unit>
