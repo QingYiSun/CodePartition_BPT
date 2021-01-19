@@ -1,5 +1,5 @@
 # CodePartition_BPT
 
-##BPT算法(邱锡鹏):
+## BPT算法(邱锡鹏):
 
 
