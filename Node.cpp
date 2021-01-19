@@ -48,9 +48,10 @@ void createNodes(ReadDot obj){
 
         // case 1: 创建结点，源字符串模式: nx [...];
         if(partLeft[0] == '['){
-            //TODO: create node
+            // 为结点添加属性nodeNo
             nodes[nx_no].nodeNo = nx;
 
+            // 为结点添加属性label
             int loc_str1 = partLeft.find("label");
             std::string label;
             for(int j = loc_str1 + 7; j < partLeft.length(); j++){
@@ -61,15 +62,46 @@ void createNodes(ReadDot obj){
             }
             nodes[nx_no].label = label;
 
+            // 为结点添加属性lineNo，可选（包含line属性的结点）
             if(partLeft.find("line=") != std::string::npos){
                 int loc_str2 = partLeft.find("line=");
-                //TODO: here to continue
+                std::string line;
+                for(int j = loc_str2 + 5; j < partLeft.length(); j++){
+                    if(partLeft[j] == ','){
+                        break;
+                    }
+                    line += partLeft[j];
+                }
+                int lineNo = std::stoi(line);
+                nodes[nx_no].lineNo = lineNo;
             }
         }
 
         // case 2: 添加边，源字符串模式: nx -> ny [...];
         if(partLeft[0] == '-'){
-            //TODO: create edge
+            // 寻找出边的指向结点targetNo
+            int loc_str1 = 4;
+            std::string trg;
+            for(int j = loc_str1; partLeft[j] != '['; j++){
+                trg += partLeft[j];
+            }
+            int trgNo = std::stoi(trg);
+
+            // 遍历数组targetNodes，找到第一个空位
+            int firstSpace = 0;
+            for(; nodes[nx_no].targetNodes[firstSpace].targetNo != -1; firstSpace++);
+
+            // 将trgNo填入nodes[nx_no].targetNodes[firstSpace]
+            nodes[nx_no].targetNodes[firstSpace].targetNo = trgNo;
+
+            // 寻找color属性
+            int loc_str2 = partLeft.find("color=");
+            loc_str2 += 6;
+            std::string color;
+            for(; partLeft[loc_str2] != ']'; loc_str2++){
+                color += partLeft[loc_str2];
+            }
+            nodes[nx_no].targetNodes[firstSpace].colorInfo = color;
         }
 
     }

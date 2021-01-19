@@ -13,5 +13,7 @@ int main() {
     initNodes();
     createNodes(sample);
 
+    // BPT算法
+
     return 0;
 }
